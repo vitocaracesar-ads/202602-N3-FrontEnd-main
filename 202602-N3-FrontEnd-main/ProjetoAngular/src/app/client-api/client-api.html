@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col">
+        <button class="btn btn-primary">adicionar</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+    </div>
+</div>
+<table class="table table-stiped table-bordred table-hover">
+    <thead>
+        <tr>
+            <th>imagem</th>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+       @for(cliente of clientes; track cliente.id){
+        <tr>
+            <td style="width: 200px;">
+                <img [src]="cliente.image" class="img-thumbnail">
+            </td>
+            <td>{{cliente.Id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.email}}</td>
+            <td>
+                <button class="btn btn-sm btn-warning">editar</button>
+                 <button class="btn btn-sm btn-danger" (click)="excluir(cliente.id)">Excluir</button>
+            </td>
+        </tr>
+       }
+    </tbody>
+
+</table>
